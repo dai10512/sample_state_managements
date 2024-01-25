@@ -6,7 +6,9 @@ final userServiceProvider =
 
 class UserService extends Notifier<User?> {
   @override
-  User? build() => null;
+  User? build() {
+    return null;
+  }
 
   Future<void> login() async {
     state = const User(

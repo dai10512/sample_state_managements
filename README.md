@@ -1,16 +1,6 @@
-# sample_state_managements
+このコードは実際のプロジェクトで使った状態管理手法を説明するためのサンプルコードです。
 
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+仕様は次のとおり
+- メルカリのようにログインに関係なく操作できる
+- 右上アバターを押すとログインする
+- 画面構成は最も定番であるCounter、実際に使うことの多いItemのリスト画面、User画面の3つで構成している

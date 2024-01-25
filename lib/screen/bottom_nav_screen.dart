@@ -1,20 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:sample_state_managements/screen/home_screen.dart';
 import 'package:sample_state_managements/screen/item_screen.dart';
-import 'package:sample_state_managements/service/user_service.dart';
+import 'package:sample_state_managements/screen/user_screen.dart';
 
-class BottomNavScreen extends ConsumerStatefulWidget {
+class BottomNavScreen extends StatefulWidget {
   const BottomNavScreen({super.key});
 
   @override
-  ConsumerState<BottomNavScreen> createState() => _BottomNavScreenState();
+  State<BottomNavScreen> createState() => _BottomNavScreenState();
 }
 
-class _BottomNavScreenState extends ConsumerState<BottomNavScreen> {
+class _BottomNavScreenState extends State<BottomNavScreen> {
   int index = 0;
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -22,8 +19,10 @@ class _BottomNavScreenState extends ConsumerState<BottomNavScreen> {
       body: [
         const CounterScreen(),
         const ItemScreen(),
+        const UserScreen(),
       ][index],
       bottomNavigationBar: BottomNavigationBar(
+        currentIndex: index,
         onTap: (value) {
           setState(() {
             index = value;
@@ -37,6 +36,10 @@ class _BottomNavScreenState extends ConsumerState<BottomNavScreen> {
           BottomNavigationBarItem(
             icon: Icon(Icons.list),
             label: 'Item',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person),
+            label: 'User',
           ),
         ],
       ),

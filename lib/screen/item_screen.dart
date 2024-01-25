@@ -21,7 +21,6 @@ class ItemScreen extends ConsumerStatefulWidget {
 }
 
 class _ItemScreenState extends ConsumerState<ItemScreen> {
-
   @override
   Widget build(BuildContext context) {
     // user情報はグローバルに扱いたいのでNotifierで呼び出している
@@ -33,22 +32,27 @@ class _ItemScreenState extends ConsumerState<ItemScreen> {
           backgroundColor: Theme.of(context).colorScheme.inversePrimary,
           title: const Text('item'),
           actions: [
-            Container(
-              height: 30,
-              width: 30,
-              margin: const EdgeInsets.only(right: 16),
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                color: Theme.of(context).colorScheme.primary,
-                image: DecorationImage(
-                  fit: BoxFit.cover,
-                  image: NetworkImage(
-                    user?.image ?? '',
+            GestureDetector(
+              child: Container(
+                height: 30,
+                width: 30,
+                margin: const EdgeInsets.only(right: 16),
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: Theme.of(context).colorScheme.primary,
+                  image: DecorationImage(
+                    fit: BoxFit.cover,
+                    image: NetworkImage(
+                      user?.image ?? '',
+                    ),
+                    onError: (exception, stackTrace) {},
                   ),
-                  onError: (exception, stackTrace) {},
                 ),
               ),
-            )
+              onTap: () {
+                ref.read(userServiceProvider.notifier).login();
+              },
+            ),
           ],
         ),
         body: switch (asyncItem) {

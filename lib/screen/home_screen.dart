@@ -23,6 +23,10 @@ class _CounterScreenState extends ConsumerState<CounterScreen> {
     });
   }
 
+  @override
+  void initState() {
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -32,21 +36,26 @@ class _CounterScreenState extends ConsumerState<CounterScreen> {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: const Text('counter'),
         actions: [
-          Container(
-            height: 30,
-            width: 30,
-            margin: const EdgeInsets.only(right: 16),
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              color: Theme.of(context).colorScheme.primary,
-              image: DecorationImage(
-                fit: BoxFit.cover,
-                image: NetworkImage(
-                  user?.image ?? '',
+          GestureDetector(
+            child: Container(
+              height: 30,
+              width: 30,
+              margin: const EdgeInsets.only(right: 16),
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: Theme.of(context).colorScheme.primary,
+                image: DecorationImage(
+                  fit: BoxFit.cover,
+                  image: NetworkImage(
+                    user?.image ?? '',
+                  ),
+                  onError: (exception, stackTrace) {},
                 ),
-                onError: (exception, stackTrace) {},
               ),
             ),
+            onTap: () {
+              ref.read(userServiceProvider.notifier).login();
+            },
           )
         ],
       ),
