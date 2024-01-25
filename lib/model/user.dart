@@ -1,8 +1,8 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 // 生成されるdartファイルを記述
-part 'user_model.freezed.dart';
-part 'user_model.g.dart';
+part 'user.freezed.dart';
+part 'user.g.dart';
 
 // freezedでコード生成するために「@freezed」を記述
 @freezed
@@ -11,7 +11,7 @@ class User with _$User {
   const factory User({
     required String name,
     required int age,
-    required String? image,
+    required String image,
   }) = _User;
 
   // コンストラクタを記述

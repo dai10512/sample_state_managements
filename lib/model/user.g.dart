@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'user_model.dart';
+part of 'user.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
@@ -9,7 +9,7 @@ part of 'user_model.dart';
 _$UserImpl _$$UserImplFromJson(Map<String, dynamic> json) => _$UserImpl(
       name: json['name'] as String,
       age: json['age'] as int,
-      image: json['image'] as String?,
+      image: json['image'] as String,
     );
 
 Map<String, dynamic> _$$UserImplToJson(_$UserImpl instance) =>

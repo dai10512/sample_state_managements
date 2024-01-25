@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'user_model.dart';
+part of 'user.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -22,7 +22,7 @@ User _$UserFromJson(Map<String, dynamic> json) {
 mixin _$User {
   String get name => throw _privateConstructorUsedError;
   int get age => throw _privateConstructorUsedError;
-  String? get image => throw _privateConstructorUsedError;
+  String get image => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -34,7 +34,7 @@ abstract class $UserCopyWith<$Res> {
   factory $UserCopyWith(User value, $Res Function(User) then) =
       _$UserCopyWithImpl<$Res, User>;
   @useResult
-  $Res call({String name, int age, String? image});
+  $Res call({String name, int age, String image});
 }
 
 /// @nodoc
@@ -52,7 +52,7 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
   $Res call({
     Object? name = null,
     Object? age = null,
-    Object? image = freezed,
+    Object? image = null,
   }) {
     return _then(_value.copyWith(
       name: null == name
@@ -63,10 +63,10 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
           ? _value.age
           : age // ignore: cast_nullable_to_non_nullable
               as int,
-      image: freezed == image
+      image: null == image
           ? _value.image
           : image // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ) as $Val);
   }
 }
@@ -78,7 +78,7 @@ abstract class _$$UserImplCopyWith<$Res> implements $UserCopyWith<$Res> {
       __$$UserImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String name, int age, String? image});
+  $Res call({String name, int age, String image});
 }
 
 /// @nodoc
@@ -93,7 +93,7 @@ class __$$UserImplCopyWithImpl<$Res>
   $Res call({
     Object? name = null,
     Object? age = null,
-    Object? image = freezed,
+    Object? image = null,
   }) {
     return _then(_$UserImpl(
       name: null == name
@@ -104,10 +104,10 @@ class __$$UserImplCopyWithImpl<$Res>
           ? _value.age
           : age // ignore: cast_nullable_to_non_nullable
               as int,
-      image: freezed == image
+      image: null == image
           ? _value.image
           : image // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ));
   }
 }
@@ -126,7 +126,7 @@ class _$UserImpl implements _User {
   @override
   final int age;
   @override
-  final String? image;
+  final String image;
 
   @override
   String toString() {
@@ -165,7 +165,7 @@ abstract class _User implements User {
   const factory _User(
       {required final String name,
       required final int age,
-      required final String? image}) = _$UserImpl;
+      required final String image}) = _$UserImpl;
 
   factory _User.fromJson(Map<String, dynamic> json) = _$UserImpl.fromJson;
 
@@ -174,7 +174,7 @@ abstract class _User implements User {
   @override
   int get age;
   @override
-  String? get image;
+  String get image;
   @override
   @JsonKey(ignore: true)
   _$$UserImplCopyWith<_$UserImpl> get copyWith =>
