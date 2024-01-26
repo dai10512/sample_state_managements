@@ -38,6 +38,8 @@ dependencies:
   freezed_annotation: ^2.4.1
   flutter_riverpod: ^2.4.9
   riverpod_lint: ^2.3.7
+  dio: ^5.4.0
+  retrofit: ^4.0.3
 
 
 
@@ -54,6 +56,7 @@ dev_dependencies:
   freezed:
   build_runner:
   json_serializable:
+  retrofit_generator:
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
