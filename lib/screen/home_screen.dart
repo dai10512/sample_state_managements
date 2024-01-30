@@ -64,7 +64,7 @@ class _CounterScreenState extends ConsumerState<CounterScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const Text(
-              'You haveeeeee pushed the button this many times:',
+              'You have pushed the button this many times:',
             ),
             Text(
               '$_counter',
