@@ -40,6 +40,8 @@ dependencies:
   riverpod_lint: ^2.3.7
   dio: ^5.4.0
   retrofit: ^4.0.3
+  swagger_parser: ^1.14.2
+
 
 
 
