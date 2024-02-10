@@ -38,6 +38,7 @@ class UserService extends Notifier<User?> {
     String image,
   ) async {
     await ref.read(userClientProvider).updateUser(
+          '',
           id,
           User(
             name: name,

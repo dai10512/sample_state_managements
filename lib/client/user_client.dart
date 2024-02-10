@@ -6,11 +6,16 @@ import 'package:sample_state_managements/model/user.dart';
 part 'user_client.g.dart';
 
 final userClientProvider = Provider<UserRestClient>((ref) {
+  // final dio = ref.watch(dioProvider);
   final dio = Dio();
-  return UserRestClient(dio);
+  final baseUrl = FlavorConfig.instance.values['baseURL'] as String;
+  return UserRestClient(
+    dio,
+    baseUrl: baseUrl,
+  );
 });
 
-@RestApi(baseUrl: 'https://5d42a6e2bc64f90014a56ca0.mockapi.io/api/v1/')
+@RestApi()
 abstract class UserRestClient {
   factory UserRestClient(Dio dio, {String baseUrl}) = _UserRestClient;
 
@@ -19,11 +24,14 @@ abstract class UserRestClient {
 
   @POST('/tasks')
   Future<List<User>> postUser(
-    @Body() User user,
-  );
+    @Body() User user, {
+    @Query('completed') required bool completed,
+    @Field('id') String? id,
+  });
 
   @PUT('/tasks/{id}')
   Future<User> updateUser(
+    @Header('token') String token,
     @Path() String id,
     @Body() User user,
   );

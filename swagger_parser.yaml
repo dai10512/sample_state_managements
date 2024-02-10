@@ -20,7 +20,7 @@ swagger_parser:
 
   # Optional (dart only).
   # Current available serializers are: json_serializable, freezed, dart_mappable.
-  json_serializer: json_serializable
+  json_serializer: freezed
 
   # Optional (dart only). Set 'true' to generate root client
   # with interface and all clients instances.
